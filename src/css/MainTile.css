@@ -1,0 +1,19 @@
+.main__tile {
+    height: var(--main__tile--height);
+    width: var(--main__tile--width);
+    margin: auto auto;
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    -webkit-border-radius: var(--main__tile--border__radius);
+    border-radius: var(--main__tile--border__radius);
+    background-position: 50% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    -webkit-box-shadow: 3px 3px 14px -3px rgba(63, 66, 68, 0.91);
+    box-shadow: 3px 3px 14px -3px rgba(63, 66, 68, 0.91);
+}

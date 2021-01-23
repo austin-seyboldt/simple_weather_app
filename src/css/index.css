@@ -1,0 +1,29 @@
+:root {
+    /* Sizing */
+    --main__tile--height: 600px;
+    --main__tile--width: 400px;
+    --main__tile_current__weather--height: 200px;
+    --main__tile--border__radius: 2rem;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Archivo", sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.app {
+    height: 100%;
+}

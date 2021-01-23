@@ -1,0 +1,68 @@
+.current__weather__tile {
+    border: none;
+    width: inherit;
+    height: var(--main__tile_current__weather--height);
+    -webkit-border-radius: var(--main__tile--border__radius)
+        var(--main__tile--border__radius) 0 0;
+    border-radius: var(--main__tile--border__radius)
+        var(--main__tile--border__radius) 0 0;
+    color: rgba(255, 255, 255, 1);
+    background: -webkit-linear-gradient(
+        -90deg,
+        rgba(95, 156, 232, 1) 0,
+        rgba(95, 156, 232, 1) 1%,
+        rgba(189, 226, 252, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        rgba(95, 156, 232, 1) 0,
+        rgba(95, 156, 232, 1) 1%,
+        rgba(189, 226, 252, 1) 100%
+    );
+    background: linear-gradient(
+        180deg,
+        rgba(95, 156, 232, 1) 0,
+        rgba(95, 156, 232, 1) 1%,
+        rgba(189, 226, 252, 1) 100%
+    );
+}
+
+.current__weather__tile--container {
+    width: 50%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current__weather__location__tile {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+}
+
+.current__location__text {
+}
+
+.current__conditions__text {
+}
+
+.current__weather__temp__tile {
+    text-align: center;
+}
+
+.current__temp {
+    font-size: 3rem;
+}
+
+/* Defines what a temperature should look like */
+.temp {
+}
+
+.temp:after {
+    content: "°";
+}
+
+.current__hi__lo {
+    padding: 0 0.4em;
+}
