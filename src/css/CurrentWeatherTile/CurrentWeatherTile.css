@@ -1,4 +1,5 @@
 .current__weather__tile {
+    grid-area: current__weather__tile;
     border: none;
     width: inherit;
     height: var(--main__tile_current__weather--height);

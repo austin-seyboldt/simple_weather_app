@@ -1,7 +1,7 @@
 import WeatherApiInfo from "./WeatherApiInfo";
 import DefaultData from "./DefaultData";
 
-function FetchWeatherData(location) {
+const FetchWeatherData = async (location, setLocationData) => {
     const api_key = WeatherApiInfo.key;
     const baseRequestURL = "http://api.weatherapi.com/v1";
     const forecastEndpoint = "/forecast.json";
@@ -14,24 +14,18 @@ function FetchWeatherData(location) {
         `${baseRequestURL}${forecastEndpoint}?key=${api_key}&q=${location}&days=${dayCount}`
     );
 
-    let locationData = DefaultData;
-    fetch(forecastRequest)
-        .then((response) => {
-            console.log("async request sent");
-            if (!response.ok) {
-                console.log("request failed");
-                return;
-            }
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            return data;
-        })
-        .catch(() => {
-            return locationData;
-        });
-    return locationData;
-}
+    try {
+        const response = await fetch(forecastRequest);
+        if (!response.ok) {
+            console.log("request failed");
+            return;
+        }
+        let data = await response.json();
+        setLocationData(data);
+        return;
+    } catch (err) {
+        console.log("error occurred");
+    }
+};
 
 export default FetchWeatherData;

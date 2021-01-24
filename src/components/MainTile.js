@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentWeatherTile from "./CurrentWeatherTile";
+import OptionsBar from "./OptionsBar";
 import "../css/MainTile.css";
 
 const MainTile = ({ currentConditions, forecast, location }) => {
@@ -10,6 +11,7 @@ const MainTile = ({ currentConditions, forecast, location }) => {
                 forecast={forecast}
                 location={location}
             />
+            <OptionsBar />
         </div>
     );
 };

@@ -1,0 +1,46 @@
+.options__bar {
+    grid-area: options__bar;
+    height: var(--options__bar--height);
+    background: -webkit-linear-gradient(
+            -90deg,
+            rgba(201, 218, 234, 1) 0,
+            rgba(113, 138, 158, 1) 100%
+        ),
+        #0199d9;
+    background: -moz-linear-gradient(
+            180deg,
+            rgba(201, 218, 234, 1) 0,
+            rgba(113, 138, 158, 1) 100%
+        ),
+        #0199d9;
+    background: linear-gradient(
+            180deg,
+            rgba(201, 218, 234, 1) 0,
+            rgba(113, 138, 158, 1) 100%
+        ),
+        #0199d9;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    border-radius: 0 0 var(--main__tile--border__radius)
+        var(--main__tile--border__radius);
+}
+
+.options__bar--container {
+    height: var(--options__bar--height);
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options__bar--menu__button {
+    vertical-align: center;
+}
+
+#options__bar--menu__button {
+}

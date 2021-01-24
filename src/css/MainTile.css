@@ -1,9 +1,15 @@
 .main__tile {
     height: var(--main__tile--height);
     width: var(--main__tile--width);
-    margin: auto auto;
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-areas:
+        "current__weather__tile"
+        "middle__section"
+        "options__bar";
+    grid-template-rows:
+        var(--main__tile_current__weather--height)
+        auto
+        var(--options__bar--height);
     border: none;
     -webkit-border-radius: var(--main__tile--border__radius);
     border-radius: var(--main__tile--border__radius);

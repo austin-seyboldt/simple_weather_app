@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/App.css";
 import MainTile from "./MainTile";
 import FetchWeatherData from "../FetchWeatherData";
+import DefaultData from "../DefaultData";
 
 const App = () => {
     const getCurrentConditions = () => {
@@ -22,23 +23,24 @@ const App = () => {
         return currentLocationData.forecast;
     };
 
-    const getNewLocationData = (newLocation) => {
-        if (currentLocation === newLocation) {
+    const updateLocation = (newLocation) => {
+        if (newLocation === currentLocation) {
             return;
+        } else {
+            setLocation(newLocation);
         }
-        setLocationData(() => {
-            FetchWeatherData(newLocation);
-        });
     };
 
-    const [currentLocation, setLocation] = useState("New York");
-    const [currentLocationData, setLocationData] = useState(
-        FetchWeatherData(currentLocation)
-    );
+    const [currentLocation, setLocation] = useState(DefaultData.location.name);
+    const [currentLocationData, setLocationData] = useState(DefaultData);
+    const [forecast, setForecast] = useState(DefaultData.forecast);
     const [currentConditions, setCurrentConditions] = useState(
         getCurrentConditions()
     );
-    const [forecast, setForecast] = useState(() => getForecast);
+
+    useEffect(() => {
+        FetchWeatherData("New York", setLocationData);
+    }, [currentLocation]);
 
     console.log(currentLocationData);
     return (
