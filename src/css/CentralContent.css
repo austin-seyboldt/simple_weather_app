@@ -1,0 +1,6 @@
+.central__content {
+    height: var(--central__content--height);
+}
+
+.central__content--container {
+}

@@ -24,14 +24,15 @@ const App = () => {
     };
 
     const updateLocation = (newLocation) => {
-        if (newLocation === currentLocation) {
+        console.log("in update location");
+        if (newLocation === currentLocation || newLocation === "") {
             return;
         } else {
             setLocation(newLocation);
         }
     };
 
-    const [currentLocation, setLocation] = useState(DefaultData.location.name);
+    const [currentLocation, setLocation] = useState("");
     const [currentLocationData, setLocationData] = useState(DefaultData);
     const [forecast, setForecast] = useState(DefaultData.forecast);
     const [currentConditions, setCurrentConditions] = useState(
@@ -39,16 +40,21 @@ const App = () => {
     );
 
     useEffect(() => {
-        FetchWeatherData("New York", setLocationData);
+        FetchWeatherData(currentLocation, setLocationData);
     }, [currentLocation]);
 
-    console.log(currentLocationData);
+    useEffect(() => {
+        setForecast(() => getForecast());
+        setCurrentConditions(() => getCurrentConditions());
+    }, [currentLocationData]);
+
     return (
         <div className="app">
             <MainTile
                 currentConditions={currentConditions}
                 forecast={forecast}
                 location={currentLocationData.location}
+                updateLocation={updateLocation}
             />
         </div>
     );

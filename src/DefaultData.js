@@ -1,6 +1,6 @@
 const DefaultData = {
     location: {
-        name: "London",
+        name: "",
         region: "City of London, Greater London",
         country: "United Kingdom",
         lat: 51.52,
@@ -12,12 +12,12 @@ const DefaultData = {
     current: {
         last_updated_epoch: 1611347409,
         last_updated: "2021-01-22 20:30",
-        temp_c: 5.0,
-        temp_f: 41.0,
+        temp_c: null,
+        temp_f: null,
         is_day: 0,
         condition: {
-            text: "Partly cloudy",
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
+            text: "",
+            icon: "",
             code: 1003,
         },
         wind_mph: 6.9,
@@ -44,10 +44,10 @@ const DefaultData = {
                 date: "2021-01-22",
                 date_epoch: 1611273600,
                 day: {
-                    maxtemp_c: 7.5,
-                    maxtemp_f: 45.5,
-                    mintemp_c: 3.9,
-                    mintemp_f: 39.0,
+                    maxtemp_c: null,
+                    maxtemp_f: null,
+                    mintemp_c: null,
+                    mintemp_f: null,
                     avgtemp_c: 5.4,
                     avgtemp_f: 41.7,
                     maxwind_mph: 8.5,
@@ -62,7 +62,7 @@ const DefaultData = {
                     daily_will_it_snow: 0,
                     daily_chance_of_snow: "0",
                     condition: {
-                        text: "Patchy rain possible",
+                        text: "",
                         icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
                         code: 1063,
                     },

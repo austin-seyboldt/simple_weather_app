@@ -1,10 +1,30 @@
 import WeatherApiInfo from "./WeatherApiInfo";
 import DefaultData from "./DefaultData";
+import FetchIp from "./FetchIp";
+import IpDataInfo from "./IpDataApiInfo";
 
 const FetchWeatherData = async (location, setLocationData) => {
+    if (location == "") {
+        try {
+            let ipRequest = new Request(IpDataInfo.requestURL);
+            const response = await fetch(ipRequest).then((response) =>
+                response.json()
+            );
+            console.log(response);
+            location = `${response.city}, ${response.region_code}`;
+        } catch (error) {
+            console.log(
+                "Failed to fetch current location from ip address",
+                error
+            );
+            location = DefaultData.location.name;
+        }
+    }
+
+    console.log("fetching new data");
     const api_key = WeatherApiInfo.key;
-    const baseRequestURL = "http://api.weatherapi.com/v1";
-    const forecastEndpoint = "/forecast.json";
+    const baseRequestURL = WeatherApiInfo.baseRequestURL;
+    const forecastEndpoint = WeatherApiInfo.forecastEndpoint;
     if (typeof location == "undefined" || location == null) {
         location = "auto:ip";
     }
@@ -21,6 +41,7 @@ const FetchWeatherData = async (location, setLocationData) => {
             return;
         }
         let data = await response.json();
+        console.log(data);
         setLocationData(data);
         return;
     } catch (err) {

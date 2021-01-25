@@ -1,5 +1,6 @@
 .options__bar {
     grid-area: options__bar;
+    z-index: 5;
     height: var(--options__bar--height);
     background: -webkit-linear-gradient(
             -90deg,
