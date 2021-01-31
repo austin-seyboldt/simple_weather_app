@@ -1,12 +1,14 @@
 import React from "react";
 import MenuSearchBar from "./MenuSearchBar";
+import Settings from "./Settings";
 import "../css/Menu.css";
 
-const Menu = ({ updateLocation }) => {
+const Menu = () => {
     return (
         <div className="menu">
             <div className="menu--container">
-                <MenuSearchBar updateLocation={updateLocation} />
+                <MenuSearchBar />
+                <Settings />
             </div>
         </div>
     );

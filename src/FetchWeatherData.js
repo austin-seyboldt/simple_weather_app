@@ -1,23 +1,21 @@
 import WeatherApiInfo from "./WeatherApiInfo";
 import DefaultData from "./DefaultData";
-import FetchIp from "./FetchIp";
 import IpDataInfo from "./IpDataApiInfo";
 
-const FetchWeatherData = async (location, setLocationData) => {
-    if (location == "") {
+const FetchWeatherData = async (location, setLocationData, setIsLoading) => {
+    if (location === "") {
         try {
             let ipRequest = new Request(IpDataInfo.requestURL);
             const response = await fetch(ipRequest).then((response) =>
                 response.json()
             );
-            console.log(response);
             location = `${response.city}, ${response.region_code}`;
         } catch (error) {
             console.log(
                 "Failed to fetch current location from ip address",
                 error
             );
-            location = DefaultData.location.name;
+            return;
         }
     }
 
@@ -25,10 +23,7 @@ const FetchWeatherData = async (location, setLocationData) => {
     const api_key = WeatherApiInfo.key;
     const baseRequestURL = WeatherApiInfo.baseRequestURL;
     const forecastEndpoint = WeatherApiInfo.forecastEndpoint;
-    if (typeof location == "undefined" || location == null) {
-        location = "auto:ip";
-    }
-    const dayCount = 1;
+    const dayCount = 5;
 
     let forecastRequest = new Request(
         `${baseRequestURL}${forecastEndpoint}?key=${api_key}&q=${location}&days=${dayCount}`
@@ -41,8 +36,9 @@ const FetchWeatherData = async (location, setLocationData) => {
             return;
         }
         let data = await response.json();
-        console.log(data);
         setLocationData(data);
+        setIsLoading(false);
+        console.log("request success");
         return;
     } catch (err) {
         console.log("error occurred");

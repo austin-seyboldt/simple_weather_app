@@ -56,14 +56,6 @@
     font-size: 3rem;
 }
 
-/* Defines what a temperature should look like */
-.temp {
-}
-
-.temp:after {
-    content: "°";
-}
-
 .current__hi__lo {
     padding: 0 0.4em;
 }

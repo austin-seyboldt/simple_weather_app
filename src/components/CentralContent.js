@@ -1,8 +1,15 @@
 import React from "react";
+import FiveDayForecastBar from "./FiveDayForecastBar";
 import "../css/CentralContent.css";
 
-const CentralComponent = () => {
-    return <div className="central__content"></div>;
+const CentralContent = () => {
+    return (
+        <div className="central__content">
+            <div className="central__content--container">
+                <FiveDayForecastBar />
+            </div>
+        </div>
+    );
 };
 
-export default CentralComponent;
+export default CentralContent;

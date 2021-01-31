@@ -40,13 +40,16 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .menu__search__bar--container {
+    width: var(--menu__search__box--width);
     margin-top: 0.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 #menu__search__box {
@@ -54,6 +57,7 @@
 }
 
 .search__drop__down--wrapper {
+    box-sizing: border-box;
     width: var(--menu__search__box--width);
     max-height: var(--menu__search__drop__down--max__height);
     overflow-y: auto;
@@ -70,6 +74,7 @@
 
 .menu__drop__down__box:hover {
     background-color: var(--text__box--highlight__color);
+    cursor: pointer;
 }
 
 .menu__drop__down__box--container {
@@ -83,3 +88,87 @@
 
 .menu__drop__down__box--location__country {
 }
+
+/* Settings */
+.settings {
+    width: 100%;
+}
+
+.settings__container {
+}
+
+.settings__list {
+    overflow-y: hidden scroll;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.settings__list--item {
+    background-color: rgba(244, 246, 247, 1);
+    padding: 0.5rem 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.settings__list--item p {
+    flex-grow: 1;
+}
+
+/* Settings toggle switch */
+
+.settings__toggle {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+}
+
+.settings__toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.settings__toggle--slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 1rem;
+}
+
+.settings__toggle--slider:before {
+    position: absolute;
+    content: "";
+    height: 0.8rem;
+    width: 0.8rem;
+    left: 0.1rem;
+    bottom: 0.1rem;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .settings__toggle--slider {
+    background-color: #2196f3;
+}
+
+input:focus + .settings__toggle--slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .settings__toggle--slider:before {
+    -webkit-transform: translateX(1rem);
+    -ms-transform: translateX(1rem);
+    transform: translateX(1rem);
+}
+
+/* --------------------------------------------------- */

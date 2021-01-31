@@ -1,7 +1,7 @@
 import React from "react";
 
 const MenuDropDownBox = ({ location, handleClick }) => {
-    const { name, region, country } = location;
+    const { name } = location;
     return (
         <li
             className="menu__drop__down__box"
@@ -11,9 +11,6 @@ const MenuDropDownBox = ({ location, handleClick }) => {
                 <h5 className="menu__drop__down__box--location__name">
                     {name}
                 </h5>
-                <h6 className="menu__drop__down__box--location__country">
-                    {country}
-                </h6>
             </div>
         </li>
     );

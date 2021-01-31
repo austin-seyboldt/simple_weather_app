@@ -8,7 +8,7 @@
     --central__content--height: 360px;
     --menu__search__bar--height: 40px;
     --menu__search__box--width: 200px;
-    --menu__search__drop__down--max__height: 400px;
+    --menu__search__drop__down--max__height: 250px;
 
     /* colors */
     --text__box--highlight__color: rgb(212, 212, 212);
@@ -39,4 +39,12 @@ body {
 ul {
     padding: 0;
     list-style: none;
+}
+
+/* Defines what a temperature should look like */
+.temp {
+}
+
+.temp:after {
+    content: "°";
 }

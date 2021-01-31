@@ -14,6 +14,10 @@ const DefaultData = {
         last_updated: "2021-01-22 20:30",
         temp_c: null,
         temp_f: null,
+        maxtemp_c: null,
+        maxtemp_f: null,
+        mintemp_c: null,
+        mintemp_f: null,
         is_day: 0,
         condition: {
             text: "",

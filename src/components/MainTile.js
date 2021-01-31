@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CurrentWeatherTile from "./CurrentWeatherTile";
 import OptionsBar from "./OptionsBar";
 import Menu from "./Menu";
 import CentralContent from "./CentralContent";
 import "../css/MainTile.css";
+import { GlobalContext } from "./GlobalContext";
 
-const MainTile = ({
-    currentConditions,
-    forecast,
-    location,
-    updateLocation,
-}) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(true);
+const MainTile = () => {
+    const { location } = useContext(GlobalContext);
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen((prev) => {
@@ -21,16 +19,8 @@ const MainTile = ({
 
     return (
         <div className="main__tile">
-            <CurrentWeatherTile
-                currentConditions={currentConditions}
-                forecast={forecast}
-                location={location}
-            />
-            {isMenuOpen ? (
-                <Menu updateLocation={updateLocation} />
-            ) : (
-                <CentralContent />
-            )}
+            <CurrentWeatherTile />
+            {isMenuOpen ? <Menu /> : <CentralContent />}
 
             <OptionsBar toggleMenuFunction={toggleMenu} />
         </div>
