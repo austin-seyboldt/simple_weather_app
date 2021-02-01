@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/OptionsBar.css";
+import { GlobalContext } from "./GlobalContext";
 
 const OptionsBar = ({ toggleMenuFunction }) => {
+    const { isDarkMode } = useContext(GlobalContext);
     return (
-        <div className="options__bar">
+        <div className={`options__bar ${isDarkMode ? "dark__mode" : ""}`}>
             <div className="options__bar--container">
                 <button
                     className="options__bar--menu__button"

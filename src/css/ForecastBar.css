@@ -1,18 +1,18 @@
 .five__day__forecast__bar {
     background-image: -webkit-linear-gradient(
         -29.744881296942225deg,
-        rgba(232, 237, 242, 1) 0,
-        rgba(244, 246, 247, 1) 100%
+        var(--forecast__bar--background__color_1) 0,
+        var(--forecast__bar--background__color_2) 100%
     );
     background-image: -moz-linear-gradient(
         119.74488129694222deg,
-        rgba(232, 237, 242, 1) 0,
-        rgba(244, 246, 247, 1) 100%
+        var(--forecast__bar--background__color_1) 0,
+        var(--forecast__bar--background__color_2) 100%
     );
     background-image: linear-gradient(
         119.74488129694222deg,
-        rgba(232, 237, 242, 1) 0,
-        rgba(244, 246, 247, 1) 100%
+        var(--forecast__bar--background__color_1) 0,
+        var(--forecast__bar--background__color_2) 100%
     );
     background-position: 50% 50%;
     -webkit-background-origin: padding-box;
@@ -21,6 +21,24 @@
     background-clip: border-box;
     -webkit-background-size: auto auto;
     background-size: auto auto;
+}
+
+.five__day__forecast__bar.dark__mode {
+    background-image: -webkit-linear-gradient(
+        -29.744881296942225deg,
+        var(--forecast__bar--background__color_1--dark__mode) 0,
+        var(--forecast__bar--background__color_2--dark__mode) 100%
+    );
+    background-image: -moz-linear-gradient(
+        119.74488129694222deg,
+        var(--forecast__bar--background__color_1--dark__mode) 0,
+        var(--forecast__bar--background__color_2--dark__mode) 100%
+    );
+    background-image: linear-gradient(
+        119.74488129694222deg,
+        var(--forecast__bar--background__color_1--dark__mode) 0,
+        var(--forecast__bar--background__color_2--dark__mode) 100%
+    );
 }
 
 .five__day__forecast__bar--container {

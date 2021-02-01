@@ -24,6 +24,8 @@ const App = () => {
     );
     const [isCelsius, setIsCelsius] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [localTime, setLocalTime] = useState(0);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         FetchWeatherData(currentLocation, setLocationData, setIsLoading);
@@ -41,6 +43,9 @@ const App = () => {
         ] = [mintemp_f, maxtemp_f, mintemp_c, maxtemp_c];
         setCurrentConditions(current);
         setForecast(currentLocationData.forecast.forecastday);
+        setLocalTime(
+            new Date(currentLocationData.location.localtime).getHours()
+        );
     }, [currentLocationData]);
 
     // useEffect(() => {
@@ -58,6 +63,9 @@ const App = () => {
                 updateLocation,
                 isCelsius,
                 setIsCelsius,
+                localTime,
+                isDarkMode,
+                setIsDarkMode,
             }}
         >
             {isLoading ? (

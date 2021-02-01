@@ -38,8 +38,13 @@ const CurrentWeatherTempTile = () => {
 };
 
 const CurrentWeatherTile = () => {
+    const { isDarkMode } = useContext(GlobalContext);
     return (
-        <div className="current__weather__tile">
+        <div
+            className={`current__weather__tile ${
+                isDarkMode ? "dark__mode" : ""
+            }`}
+        >
             <div className="current__weather__tile--container">
                 <CurrentWeatherLocationTile />
                 <CurrentWeatherTempTile />

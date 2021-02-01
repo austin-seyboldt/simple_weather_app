@@ -3,16 +3,23 @@ import "../css/Menu.css";
 import { GlobalContext } from "./GlobalContext";
 
 const SettingsToggle = ({ value, onClick }) => {
+    const { isDarkMode } = useContext(GlobalContext);
     return (
         <label className="settings__toggle">
             <input type="checkbox" defaultChecked={value} onClick={onClick} />
-            <span className="settings__toggle--slider"></span>
+            <span
+                className={`settings__toggle--slider ${
+                    isDarkMode ? "dark__mode" : ""
+                }`}
+            ></span>
         </label>
     );
 };
 
 const Settings = () => {
-    const { isCelsius, setIsCelsius } = useContext(GlobalContext);
+    const { isCelsius, setIsCelsius, isDarkMode, setIsDarkMode } = useContext(
+        GlobalContext
+    );
     return (
         <div className="settings">
             <div className="settings__container"></div>
@@ -24,6 +31,13 @@ const Settings = () => {
                     <SettingsToggle
                         value={isCelsius}
                         onClick={() => setIsCelsius(!isCelsius)}
+                    />
+                </li>
+                <li className="settings__list--item">
+                    <p>Dark Mode</p>
+                    <SettingsToggle
+                        value={isDarkMode}
+                        onClick={() => setIsDarkMode(!isDarkMode)}
                     />
                 </li>
             </ul>

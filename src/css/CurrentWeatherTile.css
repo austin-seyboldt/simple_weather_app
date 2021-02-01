@@ -10,21 +10,42 @@
     color: rgba(255, 255, 255, 1);
     background: -webkit-linear-gradient(
         -90deg,
-        rgba(95, 156, 232, 1) 0,
-        rgba(95, 156, 232, 1) 1%,
-        rgba(189, 226, 252, 1) 100%
+        var(--central__weather__tile--background_1) 0,
+        var(--central__weather__tile--background_2) 1%,
+        var(--central__weather__tile--background_3) 100%
     );
     background: -moz-linear-gradient(
         180deg,
-        rgba(95, 156, 232, 1) 0,
-        rgba(95, 156, 232, 1) 1%,
-        rgba(189, 226, 252, 1) 100%
+        var(--central__weather__tile--background_1) 0,
+        var(--central__weather__tile--background_2) 1%,
+        var(--central__weather__tile--background_3) 100%
     );
     background: linear-gradient(
         180deg,
-        rgba(95, 156, 232, 1) 0,
-        rgba(95, 156, 232, 1) 1%,
-        rgba(189, 226, 252, 1) 100%
+        var(--central__weather__tile--background_1) 0,
+        var(--central__weather__tile--background_2) 1%,
+        var(--central__weather__tile--background_3) 100%
+    );
+}
+
+.current__weather__tile.dark__mode {
+    background: -webkit-linear-gradient(
+        -90deg,
+        var(--central__weather__tile--background_1--dark__mode) 0,
+        var(--central__weather__tile--background_2--dark__mode) 1%,
+        var(--central__weather__tile--background_3--dark__mode) 100%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        var(--central__weather__tile--background_1--dark__mode) 0,
+        var(--central__weather__tile--background_2--dark__mode) 1%,
+        var(--central__weather__tile--background_3--dark__mode) 100%
+    );
+    background: linear-gradient(
+        180deg,
+        var(--central__weather__tile--background_1--dark__mode) 0,
+        var(--central__weather__tile--background_2--dark__mode) 1%,
+        var(--central__weather__tile--background_3--dark__mode) 100%
     );
 }
 

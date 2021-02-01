@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import "../css/ForecastBar.css";
 import { GlobalContext } from "./GlobalContext";
+import { DaysofTheWeek } from "../DaysofTheWeek";
 
 const ForecastBarItem = ({ forecast }) => {
     const { isCelsius } = useContext(GlobalContext);
     const { date, day } = forecast;
-    let formattedDate = date.slice(date.search(/\d\d-\d\d$/));
+    const dayText = DaysofTheWeek[new Date(date).getDay()];
 
     const minTemp = isCelsius ? day.mintemp_c : day.mintemp_f;
     const maxTemp = isCelsius ? day.maxtemp_c : day.maxtemp_f;
     return (
         <div className="forecast__bar__item">
             <div className="forecast__bar__item--container">
-                <p className="">{formattedDate}</p>
+                <p className="">{dayText}</p>
                 <img src={day.condition.icon} alt="" />
                 <div>
                     <span className="temp">{minTemp}</span>
@@ -25,9 +26,13 @@ const ForecastBarItem = ({ forecast }) => {
 };
 
 const FiveDayForecastBar = () => {
-    const { forecast } = useContext(GlobalContext);
+    const { forecast, isDarkMode } = useContext(GlobalContext);
     return (
-        <div className="five__day__forecast__bar">
+        <div
+            className={`five__day__forecast__bar ${
+                isDarkMode ? "dark__mode" : ""
+            }`}
+        >
             <div className="five__day__forecast__bar--container">
                 {forecast.slice(0, 5).map((day) => {
                     return <ForecastBarItem forecast={day} key={day.date} />;

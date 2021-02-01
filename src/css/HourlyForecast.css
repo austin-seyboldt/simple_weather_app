@@ -1,0 +1,43 @@
+.hourly__forecast {
+    width: 100%;
+    height: var(--hourly__forecast--height);
+    background-color: var(--hourly__forecast--background__color);
+    color: rgb(255, 255, 255);
+    overflow-y: scroll;
+}
+
+.hourly__forecast.dark__mode {
+    color: white;
+    background-color: var(--hourly__forecast--background__color--dark__mode);
+}
+
+.hourly__forecast__container {
+    width: 100%;
+    height: 100%;
+}
+
+.hourly__forecast__list {
+}
+
+.forecast__hour {
+    padding: 0.5rem;
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.486);
+    font-size: 1.2rem;
+}
+
+.forecast__hour.dark__mode {
+    border-bottom: 1px solid #808080;
+}
+
+.forecast__hour:last-child {
+    border-bottom: none;
+}
+
+.forecast__hour--item:first-child {
+    flex-grow: 1;
+}
+
+.forecast__hour--item {
+    padding: 0 1rem;
+}

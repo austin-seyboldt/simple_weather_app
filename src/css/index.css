@@ -6,12 +6,38 @@
     --main__tile--border__radius: 2rem;
     --options__bar--height: 40px;
     --central__content--height: 360px;
+    --hourly__forecast--height: 260px;
     --menu__search__bar--height: 40px;
     --menu__search__box--width: 200px;
     --menu__search__drop__down--max__height: 250px;
 
-    /* colors */
-    --text__box--highlight__color: rgb(212, 212, 212);
+    /* colors -- normal*/
+    --text__box--highlight__color: #d4d4d4;
+    --central__weather__tile--background_1: rgba(95, 156, 232, 1);
+    --central__weather__tile--background_2: rgba(95, 156, 232, 1);
+    --central__weather__tile--background_3: rgba(189, 226, 252, 1);
+    --forecast__bar--background__color_1: rgba(232, 237, 242, 1);
+    --forecast__bar--background__color_2: rgba(244, 246, 247, 1);
+    --hourly__forecast--background__color: rgb(142, 193, 230);
+    --menu__background__color_1: rgba(168, 199, 234, 1);
+    --menu__background__color_2: rgba(168, 199, 234, 1);
+    --menu__background__color_3: rgba(130, 151, 175, 1);
+    --options__bar__color_1: rgba(201, 218, 234, 1);
+    --options__bar__color_2: rgba(113, 138, 158, 1);
+
+    /* colors -- darkmode */
+    --text__box--highlight__color--dark__mode: #d4d4d4;
+    --central__weather__tile--background_1--dark__mode: rgba(35, 35, 35, 1);
+    --central__weather__tile--background_2--dark__mode: rgba(56, 56, 56, 1);
+    --central__weather__tile--background_3--dark__mode: rgba(85, 86, 86, 1);
+    --forecast__bar--background__color_1--dark__mode: rgb(190, 189, 189);
+    --forecast__bar--background__color_2--dark__mode: rgb(182, 182, 182);
+    --hourly__forecast--background__color--dark__mode: #414040;
+    --menu__background__color_1--dark__mode: rgba(100, 101, 102, 1);
+    --menu__background__color_2--dark__mode: rgba(168, 199, 234, 1);
+    --menu__background__color_3--dark__mode: rgba(40, 40, 40, 1);
+    --options__bar__color_1--dark__mode: rgba(132, 132, 132, 1);
+    --options__bar__color_2--dark__mode: rgba(61, 58, 58, 1);
 }
 
 * {
