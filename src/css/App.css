@@ -17,6 +17,7 @@
 }
 
 #api__logo {
+    z-index: -5;
     position: fixed;
     bottom: 1rem;
     right: 2rem;
