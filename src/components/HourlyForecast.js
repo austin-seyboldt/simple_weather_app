@@ -27,11 +27,15 @@ const HourlyForecast = () => {
 
     const getForecastHours = () => {
         let forecastHours = forecast[0].hour.filter((hour) => {
-            return new Date(hour.time).getHours() >= localTime;
+            let newHour = new Date(hour.time).getHours();
+            return newHour >= localTime && newHour < localTime + 10;
         });
-        forecastHours = forecastHours.concat(
-            forecast[1].hour.slice(0, hourCount - forecastHours.length)
-        );
+        if (hourCount - forecastHours.length > 0) {
+            forecastHours = forecastHours.concat(
+                forecast[1].hour.slice(0, hourCount - forecastHours.length)
+            );
+        }
+
         return forecastHours;
     };
 
