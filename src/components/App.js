@@ -75,6 +75,19 @@ const App = () => {
                     <MainTile />
                 </div>
             )}
+            <a
+                href="https://www.weatherapi.com/"
+                title="Free Weather API"
+                id="api__logo"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
+                    alt="Weather data by WeatherAPI.com"
+                    border="0"
+                ></img>
+            </a>
         </GlobalContext.Provider>
     );
 };
