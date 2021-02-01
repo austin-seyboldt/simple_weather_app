@@ -46,26 +46,43 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0.5rem 0;
+    width: 80%;
+    margin: auto;
 }
 
 .day__stat__row {
+    width: 100%;
     margin: 0.2rem 0;
     display: flex;
-    border-bottom: 1px solid grey;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgb(236, 236, 236);
 }
 
 .day__stat__row:last-child {
     border-bottom: none;
+    margin-bottom: none;
 }
 
 .day__stat {
-    margin: 0.2rem 3rem;
+    margin: 0.2rem 0;
+}
+
+.day__stat:first-child {
+    flex-grow: 1;
+}
+
+.day__stat:last-child {
+    text-align: right;
 }
 
 .stat__name {
+    color: rgb(46, 46, 46);
     font-size: 0.8rem;
+    padding-bottom: 0.1rem;
 }
 
 .stat__value {
     font-size: 1rem;
+    padding-bottom: 0.1rem;
 }

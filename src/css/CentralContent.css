@@ -1,11 +1,20 @@
 .central__content {
-    height: var(--central__content--height);
+    height: 100%;
 }
 
 .central__content--container {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+        "5__day__forecast"
+        "today";
+    grid-template-rows:
+        var(--forecast__bar--height)
+        auto;
 }
 
 .today__container {
-    max-height: var(--hourly__forecast--height);
+    height: inherit;
     overflow-y: auto;
 }

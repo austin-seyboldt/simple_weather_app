@@ -8,7 +8,7 @@
         "options__bar";
     grid-template-rows:
         var(--main__tile_current__weather--height)
-        auto
+        var(--central__content--height)
         var(--options__bar--height);
     border: none;
     -webkit-border-radius: var(--main__tile--border__radius);

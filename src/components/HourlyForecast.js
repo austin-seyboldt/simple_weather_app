@@ -37,7 +37,7 @@ const HourlyForecast = () => {
 
     return (
         <div className={`hourly__forecast ${isDarkMode ? "dark__mode" : ""}`}>
-            <h1 className="hourly__forecast--header">Hourly Forecast</h1>
+            <h1 className="hourly__forecast--header">10 Hour Forecast</h1>
             <ul className="hourly__forecast__list">
                 {getForecastHours().map((hour) => {
                     return <ForecastHour forecast={hour} key={hour.time} />;

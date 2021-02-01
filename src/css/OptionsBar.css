@@ -74,8 +74,8 @@
 
 .options__bar--menu__button span {
     width: 80%;
-    height: 3px;
+    height: 2px;
     display: inline-block;
     background-color: grey;
-    margin: 2px;
+    margin: 1px 0;
 }

@@ -1,13 +1,19 @@
 :root {
-    /* Sizing */
+    /* Sizing ------------------------------------- */
     --main__tile--height: 600px;
     --main__tile--width: 400px;
-    --main__tile_current__weather--height: 200px;
     --main__tile--border__radius: 2rem;
+
+    --main__tile_current__weather--height: 170px;
     --options__bar--height: 40px;
-    --central__content--height: 360px;
+    --central__content--height: calc(
+        var(--main__tile--height) - var(--main__tile_current__weather--height) -
+            var(--options__bar--height)
+    );
+
+    --forecast__bar--height: 100px;
     --hourly__forecast--height: 260px;
-    --menu__search__bar--height: 40px;
+    --menu__search__bar--height: 50px;
     --menu__search__box--width: 200px;
     --menu__search__drop__down--max__height: 250px;
 

@@ -57,7 +57,7 @@
 
 .menu__search__bar {
     height: var(--menu__search__bar--height);
-    padding: 0;
+    padding: 0.4rem 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
