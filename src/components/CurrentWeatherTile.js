@@ -21,12 +21,14 @@ const CurrentWeatherTempTile = () => {
     const temp = isCelsius
         ? currentConditions.temp_c
         : currentConditions.temp_f;
-    const lo = isCelsius
+    let lo = isCelsius
         ? currentConditions.mintemp_c
         : currentConditions.mintemp_f;
-    const hi = isCelsius
+    let hi = isCelsius
         ? currentConditions.maxtemp_c
         : currentConditions.maxtemp_f;
+    hi = parseInt(hi);
+    lo = parseInt(lo);
 
     return (
         <div className="current__weather__temp__tile">

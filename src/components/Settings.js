@@ -25,9 +25,7 @@ const Settings = () => {
             <div className="settings__container"></div>
             <ul className="settings__list">
                 <li className="settings__list--item">
-                    <p>
-                        Change units to {isCelsius ? "Fahrenheit" : "Celsius"}
-                    </p>
+                    <p>Change units to {isCelsius ? "Imperial" : "Metric"}</p>
                     <SettingsToggle
                         value={isCelsius}
                         onClick={() => setIsCelsius(!isCelsius)}

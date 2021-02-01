@@ -1,9 +1,7 @@
 .hourly__forecast {
     width: 100%;
-    height: var(--hourly__forecast--height);
     background-color: var(--hourly__forecast--background__color);
     color: rgb(255, 255, 255);
-    overflow-y: scroll;
 }
 
 .hourly__forecast.dark__mode {
@@ -11,9 +9,10 @@
     background-color: var(--hourly__forecast--background__color--dark__mode);
 }
 
-.hourly__forecast__container {
-    width: 100%;
-    height: 100%;
+.hourly__forecast--header {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
 }
 
 .hourly__forecast__list {

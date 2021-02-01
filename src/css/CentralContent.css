@@ -4,3 +4,8 @@
 
 .central__content--container {
 }
+
+.today__container {
+    max-height: var(--hourly__forecast--height);
+    overflow-y: auto;
+}

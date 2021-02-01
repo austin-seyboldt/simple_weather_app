@@ -7,14 +7,15 @@ const ForecastHour = ({ forecast }) => {
     const { isCelsius } = useContext(GlobalContext);
     const hour = new Date(forecast.time);
     const time = hour.getHours();
+    let temp = isCelsius ? forecast.temp_c : forecast.temp_f;
+    temp = parseInt(temp);
+
     return (
         <li className="forecast__hour">
             <p className="forecast__hour--item">{`${
                 time !== 0 ? (time > 12 ? time - 12 : time) : 12
             }${time < 12 ? "am" : "pm"}`}</p>
-            <p className="forecast__hour--item temp">
-                {isCelsius ? forecast.temp_c : forecast.temp_f}
-            </p>
+            <p className="forecast__hour--item temp">{temp}</p>
         </li>
     );
 };
@@ -36,6 +37,7 @@ const HourlyForecast = () => {
 
     return (
         <div className={`hourly__forecast ${isDarkMode ? "dark__mode" : ""}`}>
+            <h1 className="hourly__forecast--header">Hourly Forecast</h1>
             <ul className="hourly__forecast__list">
                 {getForecastHours().map((hour) => {
                     return <ForecastHour forecast={hour} key={hour.time} />;

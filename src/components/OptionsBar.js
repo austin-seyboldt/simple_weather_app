@@ -11,10 +11,9 @@ const OptionsBar = ({ toggleMenuFunction }) => {
                     className="options__bar--menu__button"
                     onClick={toggleMenuFunction}
                 >
-                    <i
-                        className="fas fa-bars"
-                        id="option__bar--menu__button"
-                    ></i>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>

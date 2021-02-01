@@ -64,6 +64,7 @@
 }
 
 .current__location__text {
+    font-size: 1.5rem;
 }
 
 .current__conditions__text {
@@ -74,9 +75,10 @@
 }
 
 .current__temp {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .current__hi__lo {
     padding: 0 0.4em;
+    font-size: 1.2rem;
 }

@@ -8,8 +8,10 @@ const ForecastBarItem = ({ forecast }) => {
     const { date, day } = forecast;
     const dayText = DaysofTheWeek[new Date(date).getDay()];
 
-    const minTemp = isCelsius ? day.mintemp_c : day.mintemp_f;
-    const maxTemp = isCelsius ? day.maxtemp_c : day.maxtemp_f;
+    let minTemp = isCelsius ? day.mintemp_c : day.mintemp_f;
+    minTemp = parseInt(minTemp);
+    let maxTemp = isCelsius ? day.maxtemp_c : day.maxtemp_f;
+    maxTemp = parseInt(maxTemp);
     return (
         <div className="forecast__bar__item">
             <div className="forecast__bar__item--container">

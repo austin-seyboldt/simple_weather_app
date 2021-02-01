@@ -24,20 +24,24 @@
     --menu__background__color_3: rgba(130, 151, 175, 1);
     --options__bar__color_1: rgba(201, 218, 234, 1);
     --options__bar__color_2: rgba(113, 138, 158, 1);
+    --day__stats__color_1: rgb(202, 222, 238);
+    --day__stats__color_2: rgb(132, 152, 165);
 
     /* colors -- darkmode */
     --text__box--highlight__color--dark__mode: #d4d4d4;
     --central__weather__tile--background_1--dark__mode: rgba(35, 35, 35, 1);
     --central__weather__tile--background_2--dark__mode: rgba(56, 56, 56, 1);
     --central__weather__tile--background_3--dark__mode: rgba(85, 86, 86, 1);
-    --forecast__bar--background__color_1--dark__mode: rgb(190, 189, 189);
-    --forecast__bar--background__color_2--dark__mode: rgb(182, 182, 182);
+    --forecast__bar--background__color_1--dark__mode: rgb(218, 218, 218);
+    --forecast__bar--background__color_2--dark__mode: rgb(200, 198, 198);
     --hourly__forecast--background__color--dark__mode: #414040;
     --menu__background__color_1--dark__mode: rgba(100, 101, 102, 1);
     --menu__background__color_2--dark__mode: rgba(168, 199, 234, 1);
     --menu__background__color_3--dark__mode: rgba(40, 40, 40, 1);
     --options__bar__color_1--dark__mode: rgba(132, 132, 132, 1);
     --options__bar__color_2--dark__mode: rgba(61, 58, 58, 1);
+    --day__stats__color_1--dark__mode: rgba(193, 193, 193, 1);
+    --day__stats__color_2--dark__mode: rgba(127, 127, 127, 1);
 }
 
 * {
@@ -73,4 +77,26 @@ ul {
 
 .temp:after {
     content: "°";
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

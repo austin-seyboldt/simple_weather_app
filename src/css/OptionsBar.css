@@ -62,7 +62,20 @@
 
 .options__bar--menu__button {
     vertical-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 30px;
+    margin: 0;
+    padding: 0;
 }
 
-#options__bar--menu__button {
+.options__bar--menu__button span {
+    width: 80%;
+    height: 3px;
+    display: inline-block;
+    background-color: grey;
+    margin: 2px;
 }
