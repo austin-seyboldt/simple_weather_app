@@ -1,6 +1,6 @@
 const DefaultData = {
     location: {
-        name: "",
+        name: "London",
         region: "City of London, Greater London",
         country: "United Kingdom",
         lat: 51.52,

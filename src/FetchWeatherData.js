@@ -9,13 +9,14 @@ const FetchWeatherData = async (location, setLocationData, setIsLoading) => {
             const response = await fetch(ipRequest).then((response) =>
                 response.json()
             );
-            location = `${response.city}, ${response.region_code}`;
+            location = `${response.city} ${response.region} ${response.countr_name}`;
         } catch (error) {
             console.log(
                 "Failed to fetch current location from ip address",
                 error
             );
-            return;
+            location = DefaultData.location.name;
+            console.log(location);
         }
     }
 
