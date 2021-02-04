@@ -11,6 +11,21 @@ const Menu = () => {
             <div className="menu--container">
                 <MenuSearchBar />
                 <Settings />
+                <div>
+                    <a
+                        href="https://www.weatherapi.com/"
+                        title="Free Weather API"
+                        id="api__logo-menu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
+                            alt="Weather data by WeatherAPI.com"
+                            border="0"
+                        ></img>
+                    </a>
+                </div>
             </div>
         </div>
     );

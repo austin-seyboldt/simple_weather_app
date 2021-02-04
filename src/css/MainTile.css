@@ -23,3 +23,19 @@
     -webkit-box-shadow: 3px 3px 14px -3px rgba(63, 66, 68, 0.91);
     box-shadow: 3px 3px 14px -3px rgba(63, 66, 68, 0.91);
 }
+
+@media only screen and (max-width: 425px) {
+    .main__tile {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-areas:
+            "current__weather__tile"
+            "middle__section"
+            "options__bar";
+        grid-template-rows:
+            var(--main__tile_current__weather--height-mobile)
+            var(--central__content--height-mobile)
+            var(--options__bar--height-mobile);
+    }
+}

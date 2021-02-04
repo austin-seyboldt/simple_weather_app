@@ -1,5 +1,6 @@
 :root {
     /* Sizing ------------------------------------- */
+
     --main__tile--height: 600px;
     --main__tile--width: 400px;
     --main__tile--border__radius: 2rem;
@@ -10,6 +11,14 @@
         var(--main__tile--height) - var(--main__tile_current__weather--height) -
             var(--options__bar--height)
     );
+
+    --main__tile--height-mobild: 100vh;
+    --main__tile--width-mobile: 100vw;
+    --main__tile--border__radius-mobile: 2rem;
+
+    --main__tile_current__weather--height-mobile: 25vh;
+    --options__bar--height-mobile: 8vh;
+    --central__content--height-mobile: 67vh;
 
     --forecast__bar--height: 100px;
     --hourly__forecast--height: 260px;

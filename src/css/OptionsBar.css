@@ -79,3 +79,10 @@
     background-color: grey;
     margin: 1px 0;
 }
+
+@media only screen and (max-width: 425px) {
+    .options__bar {
+        height: var(--options__bar--height-mobile);
+        border-radius: 0;
+    }
+}

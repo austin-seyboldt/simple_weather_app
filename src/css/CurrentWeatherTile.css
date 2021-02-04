@@ -82,3 +82,10 @@
     padding: 0 0.4em;
     font-size: 1.2rem;
 }
+
+@media only screen and (max-width: 425px) {
+    .current__weather__tile {
+        height: var(--main__tile_current__weather--height-mobile);
+        border-radius: 0;
+    }
+}

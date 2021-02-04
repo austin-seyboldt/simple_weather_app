@@ -48,7 +48,8 @@
     );
 }
 
-.menu-container {
+.menu--container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,6 +118,7 @@
 /* Settings */
 .settings {
     width: 100%;
+    flex-grow: 1;
 }
 
 .settings__container {
@@ -202,3 +204,15 @@ input:checked + .settings__toggle--slider:before {
 }
 
 /* --------------------------------------------------- */
+
+#api__logo-menu {
+    display: block;
+    align-self: flex-end;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 425px) {
+    .menu {
+        height: var(--central__content--height-mobile);
+    }
+}

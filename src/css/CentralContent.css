@@ -18,3 +18,11 @@
     height: inherit;
     overflow-y: auto;
 }
+
+@media only screen and (max-width: 425px) {
+    .central__content--container {
+        grid-template-rows:
+            var(--forecast__bar--height-mobile)
+            auto;
+    }
+}
