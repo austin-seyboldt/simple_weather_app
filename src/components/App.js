@@ -4,7 +4,6 @@ import MainTile from "./MainTile";
 import FetchWeatherData from "../FetchWeatherData";
 import DefaultData from "../DefaultData";
 import { GlobalContext } from "./GlobalContext";
-import Div100vh from "react-div-100vh";
 
 const App = () => {
     const updateLocation = (newLocation) => {
@@ -15,6 +14,10 @@ const App = () => {
         } else {
             setLocation(newLocation);
         }
+    };
+
+    const handleResize = () => {
+        document.body.height = window.innerHeight;
     };
 
     const [currentLocation, setLocation] = useState("");
@@ -49,36 +52,35 @@ const App = () => {
         );
     }, [currentLocationData]);
 
-    // useEffect(() => {
-    //     console.log("executing use effect");
-    //     setForecast(getForecast());
-    //     setCurrentConditions(getCurrentConditions());
-    // }, [currentLocationData]);
+    useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
-        <Div100vh>
-            <GlobalContext.Provider
-                value={{
-                    forecast,
-                    currentConditions,
-                    location: currentLocationData.location,
-                    updateLocation,
-                    isCelsius,
-                    setIsCelsius,
-                    localTime,
-                    isDarkMode,
-                    setIsDarkMode,
-                }}
-            >
-                {isLoading ? (
-                    <h1 className="loading__page">Loading...</h1>
-                ) : (
-                    <div className="app">
-                        <MainTile />
-                    </div>
-                )}
-            </GlobalContext.Provider>
-        </Div100vh>
+        <GlobalContext.Provider
+            value={{
+                forecast,
+                currentConditions,
+                location: currentLocationData.location,
+                updateLocation,
+                isCelsius,
+                setIsCelsius,
+                localTime,
+                isDarkMode,
+                setIsDarkMode,
+            }}
+        >
+            {isLoading ? (
+                <h1 className="loading__page">Loading...</h1>
+            ) : (
+                <div className="app">
+                    <MainTile />
+                </div>
+            )}
+        </GlobalContext.Provider>
     );
 };
 
