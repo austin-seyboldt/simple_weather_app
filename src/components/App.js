@@ -4,6 +4,7 @@ import MainTile from "./MainTile";
 import FetchWeatherData from "../FetchWeatherData";
 import DefaultData from "../DefaultData";
 import { GlobalContext } from "./GlobalContext";
+import Div100vh from "react-div-100vh";
 
 const App = () => {
     const updateLocation = (newLocation) => {
@@ -55,27 +56,29 @@ const App = () => {
     // }, [currentLocationData]);
 
     return (
-        <GlobalContext.Provider
-            value={{
-                forecast,
-                currentConditions,
-                location: currentLocationData.location,
-                updateLocation,
-                isCelsius,
-                setIsCelsius,
-                localTime,
-                isDarkMode,
-                setIsDarkMode,
-            }}
-        >
-            {isLoading ? (
-                <h1 className="loading__page">Loading...</h1>
-            ) : (
-                <div className="app">
-                    <MainTile />
-                </div>
-            )}
-        </GlobalContext.Provider>
+        <Div100vh>
+            <GlobalContext.Provider
+                value={{
+                    forecast,
+                    currentConditions,
+                    location: currentLocationData.location,
+                    updateLocation,
+                    isCelsius,
+                    setIsCelsius,
+                    localTime,
+                    isDarkMode,
+                    setIsDarkMode,
+                }}
+            >
+                {isLoading ? (
+                    <h1 className="loading__page">Loading...</h1>
+                ) : (
+                    <div className="app">
+                        <MainTile />
+                    </div>
+                )}
+            </GlobalContext.Provider>
+        </Div100vh>
     );
 };
 
