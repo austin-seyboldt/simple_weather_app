@@ -30,6 +30,11 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [localTime, setLocalTime] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isApple, setIsApple] = useState(false);
+
+    const convertDateForApple = (date) => {
+        return date.replace(/-/g, "/");
+    };
 
     useEffect(() => {
         FetchWeatherData(currentLocation, setLocationData, setIsLoading);
@@ -48,7 +53,13 @@ const App = () => {
         setCurrentConditions(current);
         setForecast(currentLocationData.forecast.forecastday);
         setLocalTime(
-            new Date(currentLocationData.location.localtime).getHours()
+            isApple
+                ? new Date(
+                      convertDateForApple(
+                          currentLocationData.location.localtime
+                      )
+                  ).getHours()
+                : new Date(currentLocationData.location.localtime).getHours()
         );
     }, [currentLocationData]);
 
@@ -57,6 +68,12 @@ const App = () => {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
+    }, []);
+
+    useEffect(() => {
+        if (navigator.userAgent.match(/(iPhone | iPod | iPad)/) != null) {
+            setIsApple(true);
+        }
     }, []);
 
     return (
@@ -71,6 +88,8 @@ const App = () => {
                 localTime,
                 isDarkMode,
                 setIsDarkMode,
+                isApple,
+                convertDateForApple,
             }}
         >
             {isLoading ? (
